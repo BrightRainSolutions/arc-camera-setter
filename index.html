@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>camera setter</title>
+        <link rel="icon" type="image/png" href="img/logo.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
+        <link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
+        <link rel="stylesheet" href="css/dv-camera-setter.css">
+        <script src="https://js.arcgis.com/4.3/"></script>
+        <script src="js/dv-camera-setter.js"></script>
+    </head>
+    <body>
+        <div id="cameraContainer">
+            <h3 id="positionContainer">
+                <img class="float-right" src="https://maxcdn.icons8.com/dotty/PNG/80/Objects/camera-80.png" title="Camera" width="80" height="80">
+                <div>position: </div>
+                <div id="xValue"></div>
+                <div id="yValue"></div>
+            </h3>
+            <h3 id="altitudeContainer">
+                <span>altitude: </span>
+                <span id="altitudeValue"></span>
+            </h3>
+            <h3 id="headingContainer">
+                <span>heading: </span>
+                <span id="headingValue"></span>
+            </h3>
+            <h3 id="tiltContainer">
+                <span>tilt: </span>
+                <span id="tiltValue"></span>
+            </h3>
+            <button id="tour">Tour</button>
+            <button id="reset">Reset</button>
+            <div><a class="credits float-right" target="_blank" href="https://icons8.com">Icon pack by Icons8</a></div>
+        </div>
+        <div id="map"></div>
+    </body>
+</html>

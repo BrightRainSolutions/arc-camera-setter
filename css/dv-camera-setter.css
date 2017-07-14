@@ -1,0 +1,58 @@
+/*colors
+orange: #F89F1E
+dark-orange: #EF5025
+yellow: #FACB0D
+*/
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+body {
+    font-family: 'Assistant', sans-serif;
+    font-size: 12px;
+}
+#cameraContainer {
+    height: 25%;
+    width: 15%;
+    right: 10px;
+    top:10px;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    z-index: 999;
+    box-shadow: 3px 3px 10px;
+}
+#map {
+    height: 100%;
+    width: 100%;
+}
+.float-right {
+    float: right;   
+}
+.credits {
+    font-size: 8px;
+    font-style:oblique;
+    color: gray;
+}
+button {
+    cursor: pointer;
+    background-color: #EF5025;
+    color: white;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    padding: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.1s all ease;
+}
+button#tour {
+    margin: 12px;
+    padding: 10px;
+    font-weight:900;
+}
+button#tour:hover {
+    color: #ccc; 
+}
