@@ -8,33 +8,37 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
         <link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
         <link rel="stylesheet" href="css/dv-camera-setter.css">
-        <script src="https://js.arcgis.com/4.3/"></script>
+        <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+        <script src="https://js.arcgis.com/4.4/"></script>
+        
         <script src="js/dv-camera-setter.js"></script>
     </head>
     <body>
-        <div id="cameraContainer">
-            <h3 id="positionContainer">
-                <img class="float-right" src="https://maxcdn.icons8.com/dotty/PNG/80/Objects/camera-80.png" title="Camera" width="80" height="80">
-                <div>position: </div>
-                <div id="xValue"></div>
-                <div id="yValue"></div>
-            </h3>
-            <h3 id="altitudeContainer">
-                <span>altitude: </span>
-                <span id="altitudeValue"></span>
-            </h3>
-            <h3 id="headingContainer">
-                <span>heading: </span>
-                <span id="headingValue"></span>
-            </h3>
-            <h3 id="tiltContainer">
-                <span>tilt: </span>
-                <span id="tiltValue"></span>
-            </h3>
-            <button id="tour">Tour</button>
-            <button id="reset">Reset</button>
-            <div><a class="credits float-right" target="_blank" href="https://icons8.com">Icon pack by Icons8</a></div>
-        </div>
+        <h2 id="cameraContainer">
+            <div>
+                <img src="https://maxcdn.icons8.com/dotty/PNG/80/Objects/camera-80.png" title="Camera" width="80" height="80">
+                <a class="credits float-right" target="_blank" href="https://icons8.com">Icon pack by Icons8</a>
+            </div>
+            <div id="cameraJson">
+                <div>camera: {</div>
+                <div>&emsp;"position": [</div>
+                <div>&emsp;&emsp;<span id="yValue"></span>,</div>
+                <div>&emsp;&emsp;<span id="xValue"></span>,</div>
+                <div>&emsp;&emsp;<span id="altitudeValue"></span></div>
+                <div>&emsp;],</div>
+                <div id="headingContainer">
+                    <span>&emsp;"heading": <span id="headingValue"></span>,</span>
+                </div>
+                <div id="tiltContainer">
+                    <span>&emsp;"tilt": <span id="tiltValue"></span></span>
+                </div>
+                <div>}</div>
+            </div>
+            <button id="copyCamera" data-clipboard-target="#cameraJson">
+                <img src="https://png.icons8.com/copy-to-clipboard/androidL/24" title="Copy to Clipboard" width="24" height="24">copy
+            </button>
+            <div id="copySuccess">copied to clipboard</div>
+        </h2>
         <div id="map"></div>
     </body>
 </html>
