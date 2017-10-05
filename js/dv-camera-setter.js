@@ -4,8 +4,9 @@ require([
     "esri/layers/FeatureLayer",
     "esri/Camera",
     "esri/geometry/Point",
+    "esri/widgets/Search",
     "dojo/domReady!"
-], function(Map, SceneView, FeatureLayer, Camera, Point){
+], function(Map, SceneView, FeatureLayer, Camera, Point, Search){
 
     var serviceUrl = "http://services1.arcgis.com/mRXrgD3LWwGHJmpS/arcgis/rest/services/noco_rec_sites/FeatureServer/4";
     var view;
@@ -39,6 +40,16 @@ require([
 
     view.then(function() {
         displayCameraStuff();
+    });
+
+    var searchWidget = new Search({
+        view: view
+    });
+
+    // Add the search widget to the very top left corner of the view
+    view.ui.add(searchWidget, {
+        position: "top-left",
+        index: 0
     });
 
     var layer = new FeatureLayer({
