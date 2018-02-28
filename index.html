@@ -8,9 +8,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
         <link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
         <link rel="stylesheet" href="css/dv-camera-setter.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
         <script src="https://js.arcgis.com/4.4/"></script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
         <script src="js/dv-camera-setter.js"></script>
     </head>
     <body>
@@ -35,9 +36,19 @@
                 <div>}</div>
             </div>
             <button id="copyCamera" data-clipboard-target="#cameraJson">
-                <img src="https://png.icons8.com/copy-to-clipboard/androidL/24" title="Copy to Clipboard" width="24" height="24">copy
+                <img src="https://png.icons8.com/dotty/50/000000/copy-2.png" title="Copy to Clipboard" width="24" height="24">copy
             </button>
             <div id="copySuccess">copied to clipboard</div>
+
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="enter map service url" id="serviceUrl" type="text" class="validate">
+                        <label for="serviceUrl">service url</label>
+                    </div>
+                </div>
+            </form>
+
         </h2>
         <div id="map"></div>
     </body>

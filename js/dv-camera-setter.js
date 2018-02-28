@@ -13,12 +13,12 @@ require([
     var map;
     var initialCamera = {
         "position": [
-            -105.42775673320733,
-            40.72251708321131,
-            4716.164163470268
+            -105.4278,
+            40.72,
+            4716
         ],
-        "heading": 221.26084949235252,
-        "tilt": 80.32454718245218
+        "heading": 0,
+        "tilt": 50
     }
 
     map = new Map({
@@ -39,7 +39,14 @@ require([
     });
 
     view.then(function() {
-        displayCameraStuff();
+        var layer = new FeatureLayer({
+            url: serviceUrl
+        });
+        map.layers.add(layer);
+        layer.then(function(){
+            view.extent = layer.fullExtent;
+            displayCameraStuff();
+        });   
     });
 
     var searchWidget = new Search({
@@ -51,11 +58,6 @@ require([
         position: "top-left",
         index: 0
     });
-
-    var layer = new FeatureLayer({
-        url: serviceUrl
-    });
-    map.layers.add(layer);
 
     view.on("drag", displayCameraStuff);
     view.on("mouse-wheel", displayCameraStuff);
