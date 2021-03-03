@@ -2,11 +2,9 @@ require([
     "esri/Map",
     "esri/views/SceneView",
     "esri/layers/FeatureLayer",
-    "esri/Camera",
-    "esri/geometry/Point",
     "esri/widgets/Search",
     "dojo/domReady!"
-], function(Map, SceneView, FeatureLayer, Camera, Point, Search){
+], function(Map, SceneView, FeatureLayer, Search){
 
     var serviceUrl = "http://services1.arcgis.com/mRXrgD3LWwGHJmpS/arcgis/rest/services/noco_rec_sites/FeatureServer/4";
     var view;
@@ -38,12 +36,12 @@ require([
         }
     });
 
-    view.then(function() {
+    view.when(function() {
         var layer = new FeatureLayer({
             url: serviceUrl
         });
         map.layers.add(layer);
-        layer.then(function(){
+        layer.when(function(){
             view.extent = layer.fullExtent;
             displayCameraStuff();
         });   

@@ -8,8 +8,11 @@ body {
     font-family: 'Assistant', sans-serif;
     font-size: 12px;
 }
+#map {
+    height: 100%;
+    width: 100%;
+}
 #cameraContainer {
-    height: 90%;
     width: 30%;
     right: 10px;
     top:10px;
@@ -25,21 +28,9 @@ body {
 #cameraContainer:hover {
     background-color: rgba(255, 255, 255, 0.85);
 }
-#map {
-    height: 100%;
-    width: 100%;
-}
-.float-right {
-    float: right;   
-}
-.credits {
-    font-size: 8px;
-    font-style:oblique;
-    color: gray;
-}
 button {
     cursor: pointer;
-    background-color: #EF5025;
+    background-color: #ff6600;
     color: white;
     border: 0;
     border-radius: 3px;
@@ -53,10 +44,19 @@ button#copyCamera {
     margin: 12px;
     padding: 10px;
     font-weight:900;
+    color: white
 }
 #copySuccess {
     display: none;
     font-family: sans-serif;
     font-size: 12px;
     font-weight: 900;
+}
+/* materialize and esri widget were fighting, break it up here */
+input[type=text].esri-input.esri-search__input {
+    height: 32px;
+    padding: 0 .5em;
+    margin: 0;
+    font-size: 14px;
+    border-bottom: none
 }
