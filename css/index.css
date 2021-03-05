@@ -1,4 +1,4 @@
-html, body {
+html, body, #app {
     padding: 0;
     margin: 0;
     height: 100%;
@@ -11,6 +11,8 @@ body {
 #map {
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0
 }
 #cameraContainer {
     width: 30%;
@@ -51,6 +53,9 @@ button#copyCamera {
     font-family: sans-serif;
     font-size: 12px;
     font-weight: 900;
+}
+.tab {
+    margin-left: 3em
 }
 /* materialize and esri widget were fighting, break it up here */
 input[type=text].esri-input.esri-search__input {
